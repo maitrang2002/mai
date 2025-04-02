@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind & Soul | Psychology and Life Aspects</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(to bottom, #9b7aa0, #d4a5bd, #ffd68f);
+      padding: 2rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-size: 2rem;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 2rem;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: #333;
+    }
+    
+    .hero {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(155, 122, 160, 0.7), rgba(212, 165, 189, 0.7)), url('/api/placeholder/800/600') center/cover no-repeat;
+      color: white;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #9b7aa0;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: #333;
+      color: white;
+    }
+    
+    .main {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #9b7aa0;
+    }
+    
+    .featured-posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .post-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .post-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .post-content {
+      padding: 1.5rem;
+    }
+    
+    .post-content h3 {
+      margin-bottom: 1rem;
+      color: #9b7aa0;
+    }
+    
+    .post-content p {
+      margin-bottom: 1rem;
+    }
+    
+    .post-meta {
+      font-size: 0.9rem;
+      color: #888;
+    }
+    
+    .categories {
+      margin: 4rem 0;
+    }
+    
+    .category-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .category-item {
+      background: linear-gradient(to right, #9b7aa0, #d4a5bd);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .category-item:hover {
+      background: linear-gradient(to right, #d4a5bd, #ffd68f);
+      transform: translateY(-3px);
+    }
+    
+    .newsletter {
+      background: linear-gradient(to right, #9b7aa0, #d4a5bd);
+      padding: 4rem 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .newsletter-form {
+      max-width: 500px;
+      margin: 2rem auto 0;
+      display: flex;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px 0 0 5px;
+    }
+    
+    .newsletter-form button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0 1.5rem;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background: #555;
+    }
+    
+    footer {
+      background: #333;
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 2rem 0;
+    }
+    
+    .footer-links li {
+      margin: 0 1rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .social-icons {
+      margin-bottom: 2rem;
+    }
+    
+    .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form input {
+        border-radius: 5px;
+        margin-bottom: 1rem;
+      }
+      
+      .newsletter-form button {
+        border-radius: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Mind & Soul</div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <h1>Psychology and Life Aspects</h1>
+    <p>Exploring the human mind and the various facets of our existence through the lens of psychology.</p>
+    <a href="#" class="btn">Explore Articles</a>
+  </section>
+  
+  <main class="main container">
+    <section class="featured">
+      <h2 class="section-title">Featured Articles</h2>
+      <div class="featured-posts">
+        <div class="post-card">
+          <img src="/api/placeholder/400/200" alt="Self-awareness concept" class="post-image">
+          <div class="post-content">
+            <h3>The Power of Self-Awareness</h3>
+            <p>Discovering how awareness of our thoughts and emotions can lead to personal growth and better relationships.</p>
+            <div class="post-meta">April 1, 2025 · 8 min read</div>
+          </div>
+        </div>
+        
+        <div class="post-card">
+          <img src="/api/placeholder/400/200" alt="Mindfulness meditation" class="post-image">
+          <div class="post-content">
+            <h3>Mindfulness in Daily Life</h3>
+            <p>Simple practices to incorporate mindfulness into your routine and reduce stress and anxiety.</p>
+            <div class="post-meta">March 28, 2025 · 6 min read</div>
+          </div>
+        </div>
+        
+        <div class="post-card">
+          <img src="/api/placeholder/400/200" alt="Emotional intelligence concept" class="post-image">
+          <div class="post-content">
+            <h3>Developing Emotional Intelligence</h3>
+            <p>Understanding the key components of emotional intelligence and how to enhance them.</p>
+            <div class="post-meta">March 25, 2025 · 10 min read</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="categories">
+      <h2 class="section-title">Explore Categories</h2>
+      <div class="category-list">
+        <div class="category-item">Cognitive Psychology</div>
+        <div class="category-item">Relationships</div>
+        <div class="category-item">Personal Growth</div>
+        <div class="category-item">Mental Health</div>
+        <div class="category-item">Philosophy of Mind</div>
+      </div>
+    </section>
+  </main>
+  
+  <section class="newsletter">
+    <div class="container">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for the latest articles and insights.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="social-icons">
+        <a href="#">FB</a>
+        <a href="#">TW</a>
+        <a href="#">IG</a>
+        <a href="#">LI</a>
+      </div>
+      
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      
+      <p>&copy; 2025 Mind & Soul. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
